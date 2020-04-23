@@ -1,0 +1,37 @@
+<package>
+	<id>com.vinit.blanca</id>
+	<name>Blanca</name>
+	<version>0.0.1-66</version>
+	<compatibility>
+		<firmware>
+			<miniOS>11.0</miniOS>
+		</firmware>
+	</compatibility>
+	<dependencies>
+		<package>mobilesubstrate</package>
+	</dependencies>
+	<shortDescription>Leaf style notifications !</shortDescription>
+	<descriptionlist>
+		<description>Design notifications, lockscreen music player and widgets to leaf style!</description>
+	</descriptionlist>
+	<screenshots>
+		<screenshot>
+			<description></description>
+			<image>blanca1.PNG</image>
+		</screenshot>		
+		<screenshot>
+			<description></description>
+			<image>blanca2.PNG</image>
+		</screenshot>		
+	</screenshots>
+	<changelog>
+		<change>Initial Release</change>
+	</changelog>
+	<links>
+		<link>
+			<name>Blanca reddit post</name>
+			<url>https://www.reddit.com/r/jailbreak/comments/g4k538/upcoming_blanca_leaf_style_notifications/</url>
+			<iconclass>fa fa-reddit</iconclass>
+		</link>
+	</links>
+</package>
