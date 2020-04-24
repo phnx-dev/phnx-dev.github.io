@@ -1,5 +1,12 @@
 <changelog>
 	<changes>
+		<version>0.0.3-1</version>
+		<change>Add Leaf Style Dock</change>
+		<change>Modify Preferences</change>
+		<change>Add custom options to enable disable portions of tweak</change>
+		<change>Add custom radius selection</change>
+	</changes>
+	<changes>
 		<version>0.0.2-1</version>
 		<change>Fix stacked notification masking bug</change>
 		<change>Modify Preferences</change>

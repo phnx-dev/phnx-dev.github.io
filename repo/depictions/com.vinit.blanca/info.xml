@@ -1,7 +1,7 @@
 <package>
 	<id>com.vinit.blanca</id>
 	<name>Blanca</name>
-	<version>0.0.2-1</version>
+	<version>0.0.3-1</version>
 	<compatibility>
 		<firmware>
 			<miniOS>13.0</miniOS>
@@ -9,6 +9,7 @@
 	</compatibility>
 	<dependencies>
 		<package>mobilesubstrate</package>
+		<package>ws.hbang.common</package>
 	</dependencies>
 	<shortDescription>Leaf style notifications !</shortDescription>
 	<descriptionlist>
@@ -25,9 +26,9 @@
 		</screenshot>		
 	</screenshots>
 	<changelog>
+		<change>Modify preferences, add leaft style dock</change>
 		<change>Fix masks, add preferences, etc.</change>
 		<change>Bug fixes and improvements</change>
-		<change>Initial Release</change>
 	</changelog>
 	<links>
 		<link>
