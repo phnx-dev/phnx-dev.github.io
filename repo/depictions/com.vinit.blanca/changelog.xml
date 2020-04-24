@@ -1,5 +1,11 @@
 <changelog>
 	<changes>
+		<version>0.0.2-1</version>
+		<change>Fix stacked notification masking bug</change>
+		<change>Modify Preferences</change>
+		<change>More improvements</change>
+	</changes>
+	<changes>
 		<version>0.0.1-67</version>
 		<change>Bug fixes and improvements</change>
 	</changes>

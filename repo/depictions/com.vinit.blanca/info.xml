@@ -1,10 +1,10 @@
 <package>
 	<id>com.vinit.blanca</id>
 	<name>Blanca</name>
-	<version>0.0.1-67</version>
+	<version>0.0.2-1</version>
 	<compatibility>
 		<firmware>
-			<miniOS>11.0</miniOS>
+			<miniOS>13.0</miniOS>
 		</firmware>
 	</compatibility>
 	<dependencies>
@@ -25,6 +25,7 @@
 		</screenshot>		
 	</screenshots>
 	<changelog>
+		<change>Fix masks, add preferences, etc.</change>
 		<change>Bug fixes and improvements</change>
 		<change>Initial Release</change>
 	</changelog>
