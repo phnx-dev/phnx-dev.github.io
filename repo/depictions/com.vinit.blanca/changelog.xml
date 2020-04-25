@@ -1,5 +1,9 @@
 <changelog>
 	<changes>
+		<version>0.2.0-1</version>
+		<change>Fix broken preference bundle</change>
+	</changes>
+	<changes>
 		<version>0.1.0-5</version>
 		<change>Add option for rounded corners on all sides</change>
 	</changes>
