@@ -1,5 +1,9 @@
 <changelog>
 	<changes>
+		<version>0.1.0-5</version>
+		<change>Add option for rounded corners on all sides</change>
+	</changes>
+	<changes>
 		<version>0.1.0-2</version>
 		<change>Add Color me notif support</change>
 		<change>Add number of lines selection for notification description</change>
