@@ -1,7 +1,7 @@
 <package>
 	<id>com.vinit.blanca</id>
 	<name>Blanca</name>
-	<version>0.3.0-1</version>
+	<version>0.3.0-3</version>
 	<compatibility>
 		<firmware>
 			<miniOS>13.0</miniOS>
@@ -26,10 +26,10 @@
 		</screenshot>		
 	</screenshots>
 	<changelog>
+		<change>Add option to reset default settings</change>
 		<change>Add more options to preferences for toggling</change>
 		<change>Fix broken preferences</change>
 		<change>Color me notif support, number of description lines</change>
-		<change>Modify preferences, add leaft style dock</change>
 	</changelog>
 	<links>
 		<link>

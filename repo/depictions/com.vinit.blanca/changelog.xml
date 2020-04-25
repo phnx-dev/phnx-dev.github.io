@@ -1,5 +1,9 @@
 <changelog>
 	<changes>
+		<version>0.3.0-3</version>
+		<change>Add option to reset default settings</change>
+	</changes>
+	<changes>
 		<version>0.3.0-1</version>
 		<change>Add more options to preferences for toggling</change>
 	</changes>
