@@ -1,5 +1,9 @@
 <changelog>
 	<changes>
+		<version>1.0.0-2</version>
+		<change>Initial public release</change>
+	</changes>
+	<changes>
 		<version>0.3.0-3</version>
 		<change>Add option to reset default settings</change>
 	</changes>
