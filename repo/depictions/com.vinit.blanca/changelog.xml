@@ -1,5 +1,9 @@
 <changelog>
 	<changes>
+		<version>1.0.1-0</version>
+		<change>Fix a crash on respring</change>
+	</changes>
+	<changes>
 		<version>1.0.0-2</version>
 		<change>Initial public release</change>
 	</changes>
