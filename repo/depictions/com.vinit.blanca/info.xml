@@ -1,10 +1,10 @@
 <package>
 	<id>com.vinit.blanca</id>
 	<name>Blanca</name>
-	<version>1.0.1-1</version>
+	<version>1.1.0-1</version>
 	<compatibility>
 		<firmware>
-			<miniOS>13.0</miniOS>
+			<miniOS>12.0</miniOS>
 		</firmware>
 	</compatibility>
 	<dependencies>
@@ -26,6 +26,7 @@
 		</screenshot>		
 	</screenshots>
 	<changelog>
+		<change>Testing iOS 12 support</change>
 		<change>Fix a crash on respring</change>
 		<change>Initial public release</change>
 		<change>Add option to reset default settings</change>
