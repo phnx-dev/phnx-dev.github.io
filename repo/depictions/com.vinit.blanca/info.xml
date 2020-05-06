@@ -1,6 +1,7 @@
 <package>
 	<id>com.vinit.blanca</id>
 	<name>Blanca</name>
+	<developer>Phoenix Dev</developer>
 	<version>1.1.0-1</version>
 	<compatibility>
 		<firmware>
@@ -26,11 +27,14 @@
 		</screenshot>		
 	</screenshots>
 	<changelog>
-		<change>Testing iOS 12 support</change>
-		<change>Fix a crash on respring</change>
-		<change>Initial public release</change>
-		<change>Add option to reset default settings</change>
-		<change>Add more options to preferences for toggling</change>
+		<changes>
+			<version>1.1.0-1</version>
+			<change>Testing iOS 12 support</change>
+		</changes>
+		<changes>
+			<version>0.0.1-66</version>
+			<change>Initial Release</change>
+		</changes>
 	</changelog>
 	<links>
 		<link>

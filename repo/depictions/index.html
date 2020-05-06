@@ -19,6 +19,20 @@
 		background: green
 	}
   </style>
+  	<link rel="stylesheet" type="text/css" href="../web/index.css">
+	<style>
+		a,
+		.tint,
+		.table-btn:after {
+			color: #ee635c
+		}
+
+		.active {
+			color: #ee635c;
+			border-bottom: 2px solid #ee635c;
+		}
+	</style>
+	<script src="../web/index.js"></script>
   <script type="text/javascript">
 
 	bundleid = $.QueryString['p'];
@@ -26,6 +40,8 @@
     var contentBlocks = 	{
     	"#packageName" :
 			{"type":"text","source":"package>name"}
+		,"#packageDeveloper":
+			{ "type": "text", "source": "package>developer" }
 		,"#packageHeader" :
 			{"type":"custom"
 				,"source":"package>name"
@@ -58,79 +74,36 @@
         ,"#descriptionList"	:
 			{"type":"list"
 				,"source" :"package>descriptionlist>description"
-				,"paragraphElement"	: "<li class='list-group-item'>"
-				,"emptyListCallback":function(e){$("#descriptionPanel").hide()}
+				,"paragraphElement"	: "<p>"
+				,"emptyListCallback":function(e){$("#descriptionList").hide()}
 			}
-        ,"#screenshotsLink"	:
-			{"type":"custom"
-				,"source" :"package>screenshots>screenshot"
-				,"render":function(element, source){
-					$("#screenshotsLink").remove();
+		,"#changeLogList":
+			{
+				"type": "articles"
+				, "source": "changelog"
+				, "titleSource": "version"
+				, "paragraphSource": "change"
+				, "titleElement": "<div class='changelog_entry'><h4>"
+				, "paragraphContainer": "<div class='md_view'>"
+				, "paragraphElement": "<p>"
+
+			}
+		,"#screenshotsList":
+			{
+				"type": "custom"
+				, "source": "package>screenshots>screenshot"
+				, "render": function (element, source) {
 					if ($(source).size() == 0) {
-						return
+						$(element).append($("<div class='alert alert-danger'>The aren't any screenshots for this package</div>"));
+						return;
 					}
-					// create screenshots link
-					$("#descriptionList").append(
-						$("<a class='link-item list-group-item'>")
-							.attr("href","screenshots.html?p="+bundleid)
-							.text("Screenshots")
-					);
-				}
-			}
-		,"#versionBadge" : {"type":"text","source":"package>version"}
-        ,"#changesList"	:
-			{"type":"list"
-				,"source" :"package>changelog>change"
-				,"reverseRender"    : true
-				,"paragraphElement"	: "<li class='list-group-item'>"
-				,"emptyListCallback":function(e){$("#changesList").hide()}
-			}
-		,"#changelogLink" :
-            {"type":"custom"
-                ,"source" :"package>changelog>change"
-                ,"render":function(element, source){
-                    $("#changelogLink").remove();
-                    if ($(source).size() == 0) {
-                        return
-                    }
-                    // create changelog link
-                    $("#changesList").append(
-                        $("<a class='link-item list-group-item'>")
-                            .attr("href","changelog.html?p="+bundleid)
-                            .text("Full Changelog")
-                    );
-                }
-            }
-		,"#dependencyList" :
-			{"type":"list"
-				,"source" :"package>dependencies>package"
-				,"paragraphElement"	: "<li class='list-group-item'>"
-				,"emptyListCallback":function(e){$("#dependenciesContainer").remove()}
-			}
-		,"#externalLinksList" :
-			{"type":"custom"
-				,"source" :"package>links>link"
-				,"paragraphElement"	: "<li class='list-group-item'>"
-				,"render":function(element,source){
-					if ($(source).size()==0){
-						$('#externalLinksContainer').remove()
-					}
-
-                    $.each(source, function(index,data) {
-                        var a = $("<a class='link-item list-group-item'>");
-                        a.attr("href",$(data).find('url').text());
-                        if ($(data).find('iconclass')) {
-                            var i =  $("<span>")
-                            i.attr("class",$(data).find('iconclass').text());
-                            console.log(i);
-                            $(a).append(i);
-                        }
-                        $(a).append($(data).find('name').text());
-                        $(element).append(a);
-                    }); //each
+					$.each(source, function (index, data) {
+						var th = $("<img class='img_card'>")
+							.attr("src", bundleid + '/screenshots/' + $(data).find('image').text());
+						$(element).append(th);
+					});
 
 				}
-
 			}
 	}
     $( document ).ready(function() {
@@ -140,6 +113,8 @@
             url     : (bundleid+"/info.xml"),
             success : function(xml){
 				document.title = $(xml).find("package>name").text();
+				$("packageBanner").attr("style", "background-image: url(../assets/" + bundleid + "/banner.png)");
+				$("packageName").attr("src", "../assets/" + bundleid + "/icon.png");
             	data_loader_engine(contentBlocks,xml)
 
             },
@@ -156,44 +131,55 @@
 <body>
 <br />
 
-<div id="packageInformation">
-
-	<div id="packageHeader" class="container" style="display:none">
-		<div class="jumbotron">
-			<h1 id="packageName"></h1>
-			<p id="packageShortDesc">brought to you by Reposi3</p>
+<div id="packageInformation" class="body">
+	<div id="packageBanner" class="banner_underlay"></div>
+	<div class="package package_head">
+		<img id="packageImage">
+		<div class="package_info">
+			<h1 id="packageName" class="package_name">Blanca</h1>
+			<p id="packageDeveloper" class="package_caption">Phoenix Dev</p>
 		</div>
 	</div>
-
-	<div class="container">
-	  <div id="compatibilityCheck" class="alert"></div>
+	<div class="nav">
+		<div class="nav_btn active tweak_info_btn" onclick="swap('.changelog','.tweak_info');">Details</div>
+		<div class="nav_btn changelog_btn" onclick="swap('.tweak_info','.changelog');">Changelog</div>
 	</div>
-
-	<div class="container">
-		<h5>DESCRIPTION</h5>
-		<ul id="descriptionList" class="list-group">
-			<li id="screenshotsLink" />
-		</ul>
+	<div class="tweak_info">
+		<div id="compatibilityCheck" class="compatibility alert"></div>
+		<div id="descriptionList" class="md_view">
+		</div>
+		<div id="screenshotsList" class="scroll_view">
+		</div>
+		<h3>Information</h3>
+		<div class="table">
+			<div class="cell">
+				<div class="title">Developer</div>
+				<div class="text">ConorTheDev</div>
+				<br><br>
+			</div>
+			<div class="cell">
+				<div class="title">Version</div>
+				<div class="text">1.1</div>
+				<br><br>
+			</div>
+			<div class="cell">
+				<div class="title">Compatibility</div>
+				<div class="text">iOS 12.0 to 13.4.1</div>
+				<br><br>
+			</div>
+			<div class="cell">
+				<div class="title">Section</div>
+				<div class="text">Tweaks</div>
+				<br><br>
+			</div>
+		</div>
+		<a href="https://github.com/cbyrne/MitsuhaForever" class="table-btn">
+			<div>View Source Code</div>
+		</a>
 	</div>
-
-	<div class="container">
-		<h5>IN THIS VERSION <span id="versionBadge" class="badge" /></h5>
-		<ul id="changesList" class="list-group">
-			<li id="changelogLink" />
-		</ul>
+	<div class="changelog" id="changeLogList">
 	</div>
-	<div class="container" id="dependenciesContainer">
-		<h5>DEPENDENCIES</h5>
-		<ul id="dependencyList" class="list-group">
-		</ul>
-	</div>
-
-	<div class="container" id="externalLinksContainer">
-		<h5>LINKS</h5>
-		<ul id="externalLinksList" class="list-group">
-		</ul>
-	</div>
-
+	<div class="caption center footer"></div>
 </div>
 <div id="packageError" style="display:none">
 	<div class="container">
@@ -257,7 +243,5 @@
 		</ul>
 	</div>
 </div>
-
-
 </body>
 </html>
