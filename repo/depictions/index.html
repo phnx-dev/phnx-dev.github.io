@@ -83,8 +83,8 @@
 				, "source": "changelog"
 				, "titleSource": "version"
 				, "paragraphSource": "change"
-				, "titleElement": "<div class='changelog_entry'><h4>"
-				, "paragraphContainer": "<div class='md_view'>"
+				, "titleElement": "<h4 style='font-size: 18px;'>"
+				, "paragraphContainer": "<div class='md_view' style='margin-bottom: 18px;'>"
 				, "paragraphElement": "<p>"
 
 			}
@@ -113,8 +113,8 @@
             url     : (bundleid+"/info.xml"),
             success : function(xml){
 				document.title = $(xml).find("package>name").text();
-				$("packageBanner").attr("style", "background-image: url(../assets/" + bundleid + "/banner.png)");
-				$("packageName").attr("src", "../assets/" + bundleid + "/icon.png");
+				$("#packageBanner").attr("style", "background-image: url(../assets/" + bundleid + "/banner.png)");
+				$("#packageImage").attr("src", "../assets/" + bundleid + "/icon.png");
             	data_loader_engine(contentBlocks,xml)
 
             },
