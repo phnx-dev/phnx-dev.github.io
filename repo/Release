@@ -1,8 +1,8 @@
-Origin: Phnx_dev's Repo
-Label: Phnx_dev's Repo
+Origin: Phoenix Dev's Repo
+Label: Phoenix Dev's Repo
 Suite: stable
-Version: 1.0
+Version: 1.1
 Codename: ios
 Architectures: iphoneos-arm
 Components: main
-Description: Phnx_dev's Beta repo
+Description: Phoenix Dev's Repo for free iOS Tweaks
