@@ -42,6 +42,10 @@
 			{"type":"text","source":"package>name"}
 		,"#packageDeveloper":
 			{ "type": "text", "source": "package>developer" }
+		, "#moreInfoDeveloper":
+			{ "type": "text", "source": "package>developer" }
+		,"#packageVersion":
+			{ "type": "text", "source": "package>version" }
 		,"#packageHeader" :
 			{"type":"custom"
 				,"source":"package>name"
@@ -59,6 +63,7 @@
 			{"type":"custom"
 				,"source":"package>compatibility>firmware"
 				,"render":function(element,source){
+					$("#compatibilityInformation").text("iOS " + $(source).find("miniOS").text() + " - " + $(source).find("maxiOS").text());
 					var res = ios_version_check(
 						$(source).find("miniOS").text(),
 						$(source).find("maxiOS").text(),
@@ -136,8 +141,8 @@
 	<div class="package package_head">
 		<img id="packageImage">
 		<div class="package_info">
-			<h1 id="packageName" class="package_name">Blanca</h1>
-			<p id="packageDeveloper" class="package_caption">Phoenix Dev</p>
+			<h1 id="packageName" class="package_name"></h1>
+			<p id="packageDeveloper" class="package_caption"></p>
 		</div>
 	</div>
 	<div class="nav">
@@ -154,17 +159,17 @@
 		<div class="table">
 			<div class="cell">
 				<div class="title">Developer</div>
-				<div class="text">ConorTheDev</div>
+				<div id="moreInfoDeveloper" class="text"></div>
 				<br><br>
 			</div>
 			<div class="cell">
 				<div class="title">Version</div>
-				<div class="text">1.1</div>
+				<div id="packageVersion" class="text"></div>
 				<br><br>
 			</div>
 			<div class="cell">
 				<div class="title">Compatibility</div>
-				<div class="text">iOS 12.0 to 13.4.1</div>
+				<div id="compatibilityInformation" class="text"></div>
 				<br><br>
 			</div>
 			<div class="cell">
@@ -173,14 +178,15 @@
 				<br><br>
 			</div>
 		</div>
-		<a href="https://github.com/cbyrne/MitsuhaForever" class="table-btn">
-			<div>View Source Code</div>
+		<a href="https://twitter.com/phnx_dev" class="table-btn">
+			<div>Twitter</div>
 		</a>
 	</div>
 	<div class="changelog" id="changeLogList">
 	</div>
 	<div class="caption center footer"></div>
 </div>
+
 <div id="packageError" style="display:none">
 	<div class="container">
 	  <div class="alert alert-danger">
@@ -189,59 +195,5 @@
 	</div>
 </div>
 
-<script type="text/javascript">
-   function setAnchorTargets() {
-     // if on Cydia, set link targets to _blank
-     if (navigator.userAgent.search(/Cydia/) != -1) {
-       $("a").each(function() {
-         $(this).attr("target","_blank");
-       });
-     }
-   }
-
-    var repoContents =  {
-        "#repoFooterLinks" :
-            {"type":"custom"
-                ,"source":"repo>footerlinks>link"
-                ,"render":function(element,source) {
-                    $.each(source, function(index,data) {
-                        var a = $("<a class='link-item list-group-item'>");
-                        a.attr("href",$(data).find('url').text());
-                        if ($(data).find('iconclass')) {
-                            var i =  $("<span>")
-                            i.attr("class",$(data).find('iconclass').text());
-                            console.log(i);
-                            $(a).append(i);
-                        }
-                        $(a).append($(data).find('name').text());
-                        $(element).append(a);
-                    }); //each
-                } //render
-            }
-    }
-    $( document ).ready(function() {
-        $.ajax({type: "GET", dataType: "xml",url : ("../repo.xml"),cache: false,
-            success : function(xml){
-				      data_loader_engine(repoContents,xml);
-              setAnchorTargets();
-			      },
-            error: function() {
-              $("#contactInfo").hide();
-              setAnchorTargets();
-            }
-        }); //ajax
-
-
-    }); // ready
-
-</script>
-
-<div id="contactInfo">
-	<div class="container">
-		<h5>CONTACT</h5>
-		<ul class="list-group" id="repoFooterLinks">
-		</ul>
-	</div>
-</div>
 </body>
 </html>
