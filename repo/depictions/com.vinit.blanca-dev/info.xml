@@ -11,6 +11,7 @@
 	</compatibility>
 	<dependencies>
 		<package>mobilesubstrate</package>
+		<package>ws.hbang.common</package>
 	</dependencies>
 	<shortDescription>Leaf style notifications !</shortDescription>
 	<descriptionlist>
@@ -18,6 +19,28 @@
 		<description>Blanca converts the Notification Banners to leaf style. It is a fully customizable tweak for your Notification Center. It redesigns your notification banners, widgets, media player and dock to leaf style.</description>
 		<description>Not sold by the idea of leaf design? Blanca allows you to modify the banners based on your need. Add custom corner radius to make your own designs. It also supports flat Android style edge to edge notifications.</description>
 	</descriptionlist>
+	<screenshots>
+		<screenshot>
+			<description></description>
+			<image>1.png</image>
+		</screenshot>
+		<screenshot>
+			<description></description>
+			<image>2.png</image>
+		</screenshot>
+		<screenshot>
+			<description></description>
+			<image>3.png</image>
+		</screenshot>
+		<screenshot>
+			<description></description>
+			<image>4.png</image>
+		</screenshot>
+		<screenshot>
+			<description></description>
+			<image>5.png</image>
+		</screenshot>	
+	</screenshots>
 	<changelog>
 		<changes>
 			<version>1.1.0-1</version>
@@ -28,4 +51,11 @@
 			<change>Initial Release</change>
 		</changes>
 	</changelog>
+	<links>
+		<link>
+			<name>Blanca reddit post</name>
+			<url>https://www.reddit.com/r/jailbreak/comments/g4k538/upcoming_blanca_leaf_style_notifications/</url>
+			<iconclass>fa fa-reddit</iconclass>
+		</link>
+	</links>
 </package>
