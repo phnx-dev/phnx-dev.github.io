@@ -1,25 +1,31 @@
 <package>
-	<id>com.phoenix-dev.ares</id>
-	<name>Ares</name>
+	<id>com.vinit.blanca-dev</id>
+	<name>Blanca</name>
 	<developer>Phoenix Dev</developer>
-	<version>1.0.1-2</version>
+	<version>1.1.0-1</version>
 	<compatibility>
 		<firmware>
 			<miniOS>13.0</miniOS>
-			<maxiOS>13.5.5</maxiOS>
+			<maxiOS>13.4.1</maxiOS>
 		</firmware>
 	</compatibility>
 	<dependencies>
 		<package>mobilesubstrate</package>
 	</dependencies>
-	<shortDescription>Ares Test</shortDescription>
+	<shortDescription>Leaf style notifications !</shortDescription>
 	<descriptionlist>
-		<description>Redesign your Siri!</description>
+		<description>Redesign your Notification Center!</description>
+		<description>Blanca converts the Notification Banners to leaf style. It is a fully customizable tweak for your Notification Center. It redesigns your notification banners, widgets, media player and dock to leaf style.</description>
+		<description>Not sold by the idea of leaf design? Blanca allows you to modify the banners based on your need. Add custom corner radius to make your own designs. It also supports flat Android style edge to edge notifications.</description>
 	</descriptionlist>
 	<changelog>
 		<changes>
-			<version>1.0.1-2</version>
-			<change>Testing boot loop crash fix</change>
+			<version>1.1.0-1</version>
+			<change>Testing iOS 12 support</change>
+		</changes>
+		<changes>
+			<version>0.0.1-66</version>
+			<change>Initial Release</change>
 		</changes>
 	</changelog>
 </package>
